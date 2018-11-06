@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>ar.edu.uade</groupId>
+  <artifactId>tpbd2</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>tpbd2 Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  
+  <repositories>
+    <repository>
+        <id>maven2-repository.dev.java.net</id>
+        <name>Java.net Repository for Maven</name>
+        <url>http://download.java.net/maven/2</url>
+    </repository>
+    <repository>
+      <url>http://repository.primefaces.org/</url>
+      <id>PrimeFaces-maven-lib</id>
+      <layout>default</layout>
+      <name>Repository for library PrimeFaces-maven-lib</name>
+    </repository>
+    <repository>
+      <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+      <id>RichFaces-maven-lib</id>
+      <layout>default</layout>
+      <name>Repository for library RichFaces-maven-lib</name>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <!-- junit 5, unit test -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- unit test -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- for web servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Some containers like Tomcat don't have jstl library -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-api</artifactId>
+        <version>2.2.18</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.sun.faces</groupId>
+        <artifactId>jsf-impl</artifactId>
+        <version>2.2.18</version>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>net.bootsfaces</groupId>
+        <artifactId>bootsfaces</artifactId>
+        <version>1.3.0</version>
+        <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>mongo-java-driver</artifactId>
+        <version>3.8.2</version>
+    </dependency>
+    <dependency>
+        <groupId>org.neo4j.driver</groupId>
+        <artifactId>neo4j-java-driver</artifactId>
+        <version>1.7.0</version>
+    </dependency>
+    <dependency>
+        <groupId>biz.paluch.redis</groupId>
+        <artifactId>lettuce</artifactId>
+        <version>4.5.0.Final</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.enterprise</groupId>
+        <artifactId>cdi-api</artifactId>
+        <version>2.0</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.faces</artifactId>
+      <version>2.2.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.primefaces</groupId>
+      <artifactId>primefaces</artifactId>
+      <version>5.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.icefaces</groupId>
+      <artifactId>icefaces</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.icefaces</groupId>
+      <artifactId>icefaces-ace</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.richfaces.core</groupId>
+      <artifactId>richfaces-core-impl</artifactId>
+      <version>4.3.3.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.richfaces.ui</groupId>
+      <artifactId>richfaces-components-ui</artifactId>
+      <version>4.3.3.Final</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>tpbd2</finalName>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+            <!-- Default is too old, update to latest to run the latest Spring 5 + jUnit 5 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+
+            <!-- Default 2.2 is too old, update to latest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+            </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
